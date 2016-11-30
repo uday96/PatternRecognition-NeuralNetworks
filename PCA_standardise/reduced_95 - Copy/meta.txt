@@ -1,0 +1,6 @@
+Epoch = 429 Iterations
+Performance = 0.0848
+Gradient = 7.08e-07
+
+
+Best Validation Performance is 0.15167 at epoch 210

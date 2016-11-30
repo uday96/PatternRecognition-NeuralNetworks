@@ -1,0 +1,24 @@
+addr = 'G:\Acads\5th Sem\PR\Ass2\Dataset1\linearly_seperable_data';
+delimiterIn = ' ';
+
+Datasets_train = cell(2,1);
+Datasets_test = cell(2,1);
+Datasets_val = cell(2,1);
+
+trainfiles = {'class1_train.txt','class2_train.txt','class3_train.txt','class4_train.txt'};
+testfiles = {'class1_test.txt','class2_test.txt','class3_test.txt','class4_test.txt'};
+valfiles = {'class1_val.txt','class2_val.txt','class3_val.txt','class4_val.txt'};
+filename_train = fullfile(addr,trainfiles);
+filename_test = fullfile(addr,testfiles);
+filename_val = fullfile(addr,valfiles);
+
+DatasetsTraincombined = [];
+for i = 1:4
+    Datasets_train{i} = importdata(filename_train{i},delimiterIn);
+    DatasetsTraincombined = [DatasetsTraincombined; Datasets_train{i}];
+    Datasets_test{i} = importdata(filename_test{i},delimiterIn);
+    Datasets_val{i} = importdata(filename_val{i},delimiterIn);
+end
+
+sigma = 20;
+
